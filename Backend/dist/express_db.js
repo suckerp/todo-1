@@ -6,7 +6,7 @@ class MySQL {
         this.pool = mysql_1.createPool({
             host: 'localhost',
             user: 'root',
-            password: 'admin01++',
+            password: '',
             connectionLimit: 5,
             database: 'todo'
         });

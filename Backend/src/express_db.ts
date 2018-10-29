@@ -15,7 +15,7 @@ export class MySQL {
         this.pool = createPool({
             host     : 'localhost',
             user     : 'root',
-            password : 'admin01++',
+            password : '',
             connectionLimit : 5,
             database : 'todo'
         })

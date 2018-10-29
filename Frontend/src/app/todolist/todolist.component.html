@@ -4,7 +4,7 @@
     <td>TID</td>
     <td>Aufgabe</td>
     <td>Status</td>
-    <td>PID</td>
+    <td>Mitarbeiter</td>
   </thead>
   <tbody>
     <tr *ngFor = "let todo of db.todos">
@@ -19,7 +19,11 @@
     <td></td>
     <td><input type="text" #aufgabe></td>
     <td></td>
-    <td><input type="text" #person></td>
+    <td>
+      <label>Person: </label>
+      <select name="person" #person>
+        <option *ngFor = "let person of db.persons" value="{{person.pid}}">{{person.firstname}} {{person.lastname}}</option>
+      </select></td>
     <td><button (click)="insertTodoEvent(aufgabe.value,person.value)">neu</button></td>
   </tfoot>
 </table>
