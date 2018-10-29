@@ -1,0 +1,30 @@
+<h1>Check API</h1>
+
+<label>Information an Server per HTTP POST an localhost:3000</label>
+<input type="text" #testMessage>
+<br>
+<label>Antwort vom Server:</label>
+{{http_antwort$ | async}}
+<br>
+<h1>Mitarbeiter</h1>
+<table>
+    <thead>
+        <tr>
+            <td>PID</td>
+            <td>Vorname</td>
+            <td>Nachname</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let person of db.persons">
+            <td>{{person.pid}}</td>
+            <td>{{person.firstname}}</td>
+            <td>{{person.lastname}}</td>
+        </tr>
+    </tbody>
+</table>
+<app-todolist></app-todolist>
+<div *ngFor = "let person of db.persons">
+    <app-person [person]="person"></app-person>
+</div>
+

@@ -1,0 +1,15 @@
+<h1>{{person.firstname}} {{person.lastname}}</h1>
+<table>
+  <thead>
+    <td>TID</td>
+    <td>Aufgabe</td>
+    <td>Status</td>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let todo of db.todos | todofilter:person.pid">
+      <td>{{todo.tid}}</td>
+      <td>{{todo.text}}</td>
+      <td buttonview="{{todo.status}}" (setStatus)="setStatus(todo.tid, $event)"></td>
+    </tr>
+  </tbody>
+</table>
