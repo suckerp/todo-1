@@ -22,7 +22,7 @@
     <td>
       <label>Person: </label>
       <select name="person" #person>
-        <option *ngFor = "let person of db.persons" value="{{person.pid}}">{{person.firstname}} {{person.lastname}}</option>
+        <option *ngFor = "let person of db.persons" value="{{person.pid}}">{{person.firstName}} {{person.lastName}}</option>
       </select></td>
     <td><button (click)="insertTodoEvent(aufgabe.value,person.value)">neu</button></td>
   </tfoot>

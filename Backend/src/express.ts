@@ -9,6 +9,7 @@ const port = 3000
 
 const db = new MySQL()
 
+app.use(express.static('src/public'))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -30,6 +31,7 @@ app.post('/test', (request,response) => {
 })
 
 app.post('/select', (request,response) => {
+    console.log(request.body)
     db.getContent(request.body)
         .then((x)=>response.json(x))
         .catch((err)=>response.status(500).json(err))

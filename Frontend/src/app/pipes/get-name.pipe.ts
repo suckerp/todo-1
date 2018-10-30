@@ -12,7 +12,7 @@ export class GetNamePipe implements PipeTransform {
 
   transform(value: number, args?: any): string {
     let person = this.db.persons.filter(x=>x.pid==value)[0]
-    return `${person.firstname} ${person.lastname}`;
+    return `${person.firstName} ${person.lastName}`;
   }
 
 }

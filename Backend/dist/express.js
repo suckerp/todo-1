@@ -21,6 +21,7 @@ app.post('/test', (request, response) => {
     response.json(anfrage);
 });
 app.post('/select', (request, response) => {
+    console.log(request.body);
     db.getContent(request.body)
         .then((x) => response.json(x))
         .catch((err) => response.status(500).json(err));

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 export type Person = {
   pid: number,
-  firstname: string,
-  lastname: string
+  firstName: string,
+  lastName: string
 }
 
 export type Todo = {
